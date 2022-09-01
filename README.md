@@ -5,6 +5,11 @@
 
 In the project directory, you can run:
 
+### `npm i`
+
+To install dependences
+
+
 ### `npm start`
 
 To run app in developer mode
