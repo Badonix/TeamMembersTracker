@@ -1,0 +1,68 @@
+@import url("//cdn.web-fonts.ge/fonts/bpg-banner/css/bpg-banner.min.css");
+
+*{
+  margin:0;
+  padding:0;
+  font-family: "BPG Banner", sans-serif;
+
+}
+.card-container{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card{
+  display: flex;
+  margin:50px;
+  width:250px;
+  height:300px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+.card-container div img{
+  width:200px;
+  margin:10px;
+}
+.card-body{
+  margin:15px;
+}
+.card-body p{
+  margin-top:5px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+select{
+  margin-top:50px;
+  width:30%;
+  height:30px;
+  font-size:15px;
+}
+.chrdili{
+  box-shadow: rgba(0,0,0,0.16) 0px 1px 4px, rgb(51, 51, 51)0px 0px 0px 3px;
+}
+h1,h2,h3,h4,h5,p{
+  text-align: center;
+}
+header{
+  margin-top:50px;
+}
+header h2{
+  margin-top:10px;
+}
+footer{
+  display: flex;
+  height:100px;
+  justify-content: center;
+  align-items: center;
+}
