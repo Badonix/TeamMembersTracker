@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Employees from "./Employees";
+import Nav from "./Nav";
+import NotFound from "./NotFound";
 import GroupedTeamMembers from "./GroupedTeamMembers";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
@@ -14,89 +16,89 @@ function App() {
         fullName: "ლაშა ნოზაძე",
         designation: "JavaScript Developer",
         gender: "male",
-        teamName: "გუნდი 1",
+        teamName: "TeamA",
       },
       {
         id: 2,
         fullName: "ნინო აბულაძე",
         designation: "Node Developer",
         gender: "female",
-        teamName: "გუნდი 1",
+        teamName: "TeamA",
       },
       {
         id: 3,
         fullName: "მარიამ კვარაცხელია",
         designation: "Java Developer",
         gender: "female",
-        teamName: "გუნდი 1",
+        teamName: "TeamA",
       },
       {
         id: 4,
         fullName: "ნიკა ხუციშვილი",
         designation: "React Developer",
         gender: "male",
-        teamName: "გუნდი 2",
+        teamName: "TeamB",
       },
       {
         id: 5,
         fullName: "გოჩა მიქელაძე",
         designation: "DotNet Developer",
         gender: "male",
-        teamName: "გუნდი 2",
+        teamName: "TeamB",
       },
       {
         id: 6,
         fullName: "ანა ბაირამოვი",
         designation: "SQL Server DBA",
         gender: "female",
-        teamName: "გუნდი 2",
+        teamName: "TeamB",
       },
       {
         id: 7,
         fullName: "მამუკა შენგელია",
         designation: "Angular Developer",
         gender: "male",
-        teamName: "გუნდი 3",
+        teamName: "TeamC",
       },
       {
         id: 8,
         fullName: "თაკო ტაბატაძე",
         designation: "API Developer",
         gender: "female",
-        teamName: "გუნდი 3",
+        teamName: "TeamC",
       },
       {
         id: 9,
         fullName: "მაია დიასამიძე",
         designation: "C++ Developer",
         gender: "female",
-        teamName: "გუნდი 3",
+        teamName: "TeamC",
       },
       {
         id: 10,
         fullName: "ზაზა აბაშიძე",
         designation: "Python Developer",
         gender: "male",
-        teamName: "გუნდი 4",
+        teamName: "TeamD",
       },
       {
         id: 11,
         fullName: "ანდრია ბერიძე",
         designation: "Vue Developer",
         gender: "male",
-        teamName: "გუნდი 4",
+        teamName: "TeamD",
       },
       {
         id: 12,
         fullName: "ილია მამედოვი",
         designation: "Graphic Designer",
         gender: "male",
-        teamName: "გუნდი 4",
+        teamName: "TeamD",
       },
     ]
   );
-  const [selectedTeam, setSelectedTeam] = useState(
-    JSON.parse(localStorage.getItem("selectedTeam")) || "გუნდი 1"
+  const [selectedTeam, setTeam] = useState(
+    JSON.parse(localStorage.getItem("selectedTeam")) || "TeamA"
   );
   useEffect(() => {
     localStorage.setItem("employeeList", JSON.stringify(employees));
@@ -106,8 +108,7 @@ function App() {
   }, [selectedTeam]);
 
   function handleTeamSelectionChange(e) {
-    console.log(e.target.value);
-    setSelectedTeam(e.target.value);
+    setTeam(e.target.value);
   }
 
   function handleEmployeeCardClick(event) {
@@ -122,26 +123,51 @@ function App() {
   }
   return (
     <Router>
-      <Header
-        selectedTeam={selectedTeam}
-        teamMemberCount={
-          employees.filter((employee) => employee.teamName === selectedTeam)
-            .length
-        }
-      />
+      <Nav />
+
       <Routes>
         <Route
           path="/"
           element={
-            <Employees
-              handleEmployeeCardClick={handleEmployeeCardClick}
-              employees={employees}
-              handleTeamSelectionChange={handleTeamSelectionChange}
-              selectedTeam={selectedTeam}
-            />
+            <>
+              <Header
+                selectedTeam={selectedTeam}
+                teamMemberCount={
+                  employees.filter(
+                    (employee) => employee.teamName === selectedTeam
+                  ).length
+                }
+              />
+              <Employees
+                handleEmployeeCardClick={handleEmployeeCardClick}
+                employees={employees}
+                handleTeamSelectionChange={handleTeamSelectionChange}
+                selectedTeam={selectedTeam}
+              />
+            </>
           }
         ></Route>
-        <Route path="/GroupedTeamMembers" element={<GroupedTeamMembers />} />
+        <Route
+          path="/GroupedTeamMembers"
+          element={
+            <>
+              <Header
+                selectedTeam={selectedTeam}
+                teamMemberCount={
+                  employees.filter(
+                    (employees) => employees.teamName === selectedTeam
+                  ).length
+                }
+              />
+              <GroupedTeamMembers
+                employees={employees}
+                selectedTeasm={selectedTeam}
+                setTeam={setTeam}
+              />
+            </>
+          }
+        />
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
 
       <Footer />

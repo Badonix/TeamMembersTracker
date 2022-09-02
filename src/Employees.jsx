@@ -9,10 +9,10 @@ const Employees = ({
   return (
     <main className="container">
       <select onChange={handleTeamSelectionChange} value={selectedTeam}>
-        <option value="გუნდი 1">გუნდი 1</option>
-        <option value="გუნდი 2">გუნდი 2</option>
-        <option value="გუნდი 3">გუნდი 3</option>
-        <option value="გუნდი 4">გუნდი 4</option>
+        <option value="TeamA">TeamA</option>
+        <option value="TeamB">TeamB</option>
+        <option value="TeamC">TeamC</option>
+        <option value="TeamD">TeamD</option>
       </select>
       <div className="card-container">
         {employees.map((employee) => {

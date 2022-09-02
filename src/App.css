@@ -6,6 +6,10 @@
   font-family: "BPG Banner", sans-serif;
 
 }
+body{
+  position: relative;
+  min-height: 100vh;
+}
 .card-container{
   width:100%;
   display: flex;
@@ -15,6 +19,8 @@
 }
 
 .card{
+  border: 1px solid white;
+  transition: .3s;
   display: flex;
   margin:50px;
   width:250px;
@@ -23,7 +29,6 @@
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-
   cursor: pointer;
 }
 .card-container div img{
@@ -41,6 +46,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
+}
+.card-container{
+  margin-bottom:70px;
 }
 select{
   margin-top:50px;
@@ -65,4 +74,41 @@ footer{
   height:100px;
   justify-content: center;
   align-items: center;
+}
+ul{
+  display: flex;
+  list-style: none;
+  padding:20px;
+  align-items: center;
+  justify-content: space-between;
+}
+a{
+  margin:5px;
+  text-decoration: none;
+  color:black;
+  font-size:25px;
+  transition: .2s;
+}
+a:hover{
+  color:gray;
+}
+
+.card:hover{
+ 
+  border: 1px solid gray
+}
+.notfound-container{
+  margin-top:100px;
+}
+.notfound-container h1{
+  color:red;
+  margin-bottom:30px;
+}
+.notfound-container h2{
+  color:gray;
+}
+.footer-container{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
