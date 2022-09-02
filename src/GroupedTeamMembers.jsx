@@ -58,7 +58,7 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
     setTeam(event.currentTarget.id);
   }
   return (
-    <main>
+    <main class="grouped-team">
       {groupedEmployees.map((item) => {
         return (
           <div
@@ -70,13 +70,12 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
               გუნდის სახელი: {item.team}
             </h4>
             <div
-              className={item.collapsed == true ? "collapes" : ""}
+              className={item.collapsed == true ? "collapsed" : "not-collapsed"}
               id={"collapse_" + item.team}
             >
-              <hr></hr>
               {item.members.map((member) => {
                 return (
-                  <div>
+                  <div className="tito-wevri">
                     <h5>
                       <span>სახელი : {member.fullName}</span>
                     </h5>

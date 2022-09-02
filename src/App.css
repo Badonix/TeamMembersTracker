@@ -71,7 +71,7 @@ header h2{
 }
 footer{
   display: flex;
-  height:100px;
+  margin-top:100px;
   justify-content: center;
   align-items: center;
 }
@@ -111,4 +111,30 @@ a:hover{
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.grouped-team{
+  margin-top:50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-collapsed{
+  height:0px;
+  opacity:0;
+  position: absolute;
+  top:-100px;
+  z-index:-1;
+}
+.grouped-cont{
+  
+  margin:20px;
+  padding:10px;
+  width:400px;
+  border:1px solid black;
+}
+.tito-wevri{
+  margin:10px;
+  padding:10px;
 }

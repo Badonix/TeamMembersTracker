@@ -1,5 +1,6 @@
 import femaleProfile from "./images/woman-image.png";
 import maleProfile from "./images/man-image.png";
+import Teams from "./Teams";
 const Employees = ({
   handleEmployeeCardClick,
   employees,
@@ -8,12 +9,10 @@ const Employees = ({
 }) => {
   return (
     <main className="container">
-      <select onChange={handleTeamSelectionChange} value={selectedTeam}>
-        <option value="TeamA">TeamA</option>
-        <option value="TeamB">TeamB</option>
-        <option value="TeamC">TeamC</option>
-        <option value="TeamD">TeamD</option>
-      </select>
+      <Teams
+        selectedTeam={selectedTeam}
+        handleTeamSelectionChange={handleTeamSelectionChange}
+      />
       <div className="card-container">
         {employees.map((employee) => {
           return (
