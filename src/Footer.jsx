@@ -4,7 +4,9 @@ const Footer = () => {
     <>
       <hr></hr>
       <footer>
-        <h4>გუნდის წევრების განაწილების აპლიკაცია - {today.getFullYear()} ©</h4>
+        <h4>
+          ყველა უფლება დაცულია {today.getFullYear()} © badonix development
+        </h4>
       </footer>
     </>
   );

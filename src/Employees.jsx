@@ -25,6 +25,7 @@ const Employees = ({
               }
               onClick={handleEmployeeCardClick}
               id={employee.id}
+              key={employee.id}
             >
               {employee.gender === "female" ? (
                 <img src={femaleProfile} className="card-img" />
