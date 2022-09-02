@@ -58,7 +58,7 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
     setTeam(event.currentTarget.id);
   }
   return (
-    <main class="grouped-team">
+    <main className="grouped-team">
       {groupedEmployees.map((item) => {
         return (
           <div
