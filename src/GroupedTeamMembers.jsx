@@ -6,42 +6,42 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
     var teams = [];
 
     var teamAMembers = employees.filter(
-      (employee) => employee.teamName === "TeamA"
+      (employee) => employee.teamName === "გუნდი 1"
     );
     var teamA = {
-      team: "TeamA",
+      team: "გუნდი 1",
       members: teamAMembers,
-      collapsed: selectedTeam === "TeamA" ? false : true,
+      collapsed: selectedTeam === "გუნდი 1" ? false : true,
     };
     teams.push(teamA);
 
     var teamBMembers = employees.filter(
-      (employee) => employee.teamName === "TeamB"
+      (employee) => employee.teamName === "გუნდი 2"
     );
     var teamB = {
-      team: "TeamB",
+      team: "გუნდი 2",
       members: teamBMembers,
-      collapsed: selectedTeam === "TeamB" ? false : true,
+      collapsed: selectedTeam === "გუნდი 2" ? false : true,
     };
     teams.push(teamB);
 
     var teamCMembers = employees.filter(
-      (employee) => employee.teamName === "TeamC"
+      (employee) => employee.teamName === "გუნდი 3"
     );
     var teamC = {
-      team: "TeamC",
+      team: "გუნდი 3",
       members: teamCMembers,
-      collapsed: selectedTeam === "TeamC" ? false : true,
+      collapsed: selectedTeam === "გუნდი 3" ? false : true,
     };
     teams.push(teamC);
 
     var teamDMembers = employees.filter(
-      (employee) => employee.teamName === "TeamD"
+      (employee) => employee.teamName === "გუნდი 4"
     );
     var teamD = {
-      team: "TeamD",
+      team: "გუნდი 4",
       members: teamDMembers,
-      collapsed: selectedTeam === "TeamD" ? false : true,
+      collapsed: selectedTeam === "გუნდი 4" ? false : true,
     };
     teams.push(teamD);
 

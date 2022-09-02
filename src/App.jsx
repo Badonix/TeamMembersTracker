@@ -16,89 +16,89 @@ function App() {
         fullName: "ლაშა ნოზაძე",
         designation: "JavaScript Developer",
         gender: "male",
-        teamName: "TeamA",
+        teamName: "გუნდი 1",
       },
       {
         id: 2,
         fullName: "ნინო აბულაძე",
         designation: "Node Developer",
         gender: "female",
-        teamName: "TeamA",
+        teamName: "გუნდი 1",
       },
       {
         id: 3,
         fullName: "მარიამ კვარაცხელია",
         designation: "Java Developer",
         gender: "female",
-        teamName: "TeamA",
+        teamName: "გუნდი 1",
       },
       {
         id: 4,
         fullName: "ნიკა ხუციშვილი",
         designation: "React Developer",
         gender: "male",
-        teamName: "TeamB",
+        teamName: "გუნდი 2",
       },
       {
         id: 5,
         fullName: "გოჩა მიქელაძე",
         designation: "DotNet Developer",
         gender: "male",
-        teamName: "TeamB",
+        teamName: "გუნდი 2",
       },
       {
         id: 6,
         fullName: "ანა ბაირამოვი",
         designation: "SQL Server DBA",
         gender: "female",
-        teamName: "TeamB",
+        teamName: "გუნდი 2",
       },
       {
         id: 7,
         fullName: "მამუკა შენგელია",
         designation: "Angular Developer",
         gender: "male",
-        teamName: "TeamC",
+        teamName: "გუნდი 3",
       },
       {
         id: 8,
         fullName: "თაკო ტაბატაძე",
         designation: "API Developer",
         gender: "female",
-        teamName: "TeamC",
+        teamName: "გუნდი 3",
       },
       {
         id: 9,
         fullName: "მაია დიასამიძე",
         designation: "C++ Developer",
         gender: "female",
-        teamName: "TeamC",
+        teamName: "გუნდი 3",
       },
       {
         id: 10,
         fullName: "ზაზა აბაშიძე",
         designation: "Python Developer",
         gender: "male",
-        teamName: "TeamD",
+        teamName: "გუნდი 4",
       },
       {
         id: 11,
         fullName: "ანდრია ბერიძე",
         designation: "Vue Developer",
         gender: "male",
-        teamName: "TeamD",
+        teamName: "გუნდი 4",
       },
       {
         id: 12,
         fullName: "ილია მამედოვი",
         designation: "Graphic Designer",
         gender: "male",
-        teamName: "TeamD",
+        teamName: "გუნდი 4",
       },
     ]
   );
   const [selectedTeam, setTeam] = useState(
-    JSON.parse(localStorage.getItem("selectedTeam")) || "TeamA"
+    JSON.parse(localStorage.getItem("selectedTeam")) || "გუნდი 1"
   );
   useEffect(() => {
     localStorage.setItem("employeeList", JSON.stringify(employees));
